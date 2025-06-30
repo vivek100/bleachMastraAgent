@@ -3,6 +3,14 @@ import { z } from 'zod';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 
+// Import the correct schemas from config-tools
+import { 
+  AgentConfigSchema, 
+  ToolConfigSchema, 
+  WorkflowConfigSchema,
+  FinalAgentConfigSchema 
+} from './config-tools';
+
 // Helper function to ensure a directory exists
 async function ensureDir(dirPath: string) {
     try {
@@ -46,20 +54,6 @@ export const ${agent.name} = new Agent({
 });
 `;
 }
-
-const FinalAgentConfigSchema = z.object({
-  projectName: z.string(),
-  description: z.string(),
-  dependencies: z.record(z.string()),
-  entryPoint: z.object({
-    type: z.enum(['agent', 'workflow']),
-    name: z.string(),
-  }),
-  agents: z.array(z.any()),
-  tools: z.array(z.any()),
-  workflows: z.array(z.any()).optional(),
-});
-
 
 export const scaffoldProjectTool = createTool({
   id: 'scaffold-project',

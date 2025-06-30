@@ -45,6 +45,10 @@ const FinalAgentConfigSchema = z.object({
 });
 
 // Tool implementations...
+
+// Export the schemas so they can be imported by other files
+export { AgentConfigSchema, ToolConfigSchema, WorkflowConfigSchema, FinalAgentConfigSchema };
+
 export const initializeConfigTool = createTool({
   id: 'initialize-config',
   description: 'Creates a new basic configuration skeleton.',
