@@ -8,3 +8,4 @@ dist
 *.db-* 
 generated-agents
 test*.ts
+package-lock.json
