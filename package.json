@@ -1,0 +1,32 @@
+{
+  "name": "mastra-meta-agent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "dev": "mastra dev",
+    "build": "mastra build",
+    "start": "mastra start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A meta-agent system for generating Mastra AI agents",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@mastra/core": "^0.11.0",
+    "@mastra/loggers": "^0.10.2",
+    "@mastra/memory": "^0.11.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "dotenv": "^16.4.5",
+    "mastra": "^0.10.8",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
