@@ -59,6 +59,8 @@ YOUR CORE PROCESS:
 5.  **Finalization:**
     a.  Call \`update-entry-point\`, passing the latest config object and the name of the main agent from the plan.
     b.  Call \`validate-config\` with the final config object to ensure it's valid.
+    c.  If validation succeeds, call \`scaffold-project\` to generate the project files.
+
 
 COMPLETE FLOW EXAMPLE WITH INPUTS/OUTPUTS:
 
@@ -312,6 +314,18 @@ EXAMPLE INPUT:
   "config": final_config
 }}
 
+**Call \`scaffold-project\`**
+INPUT SCHEMA:
+z.object({{
+  config: FinalAgentConfigSchema,
+  outputDir: z.string()
+}})
+
+EXAMPLE INPUT:
+{{
+  "config": final_config,
+  "outputDir": "./web-research-agent"
+}}
 
 STATE MANAGEMENT (VERY IMPORTANT):
 You are a stateful agent. Your state is the config object. You MUST pass the complete output object from one tool call as the config input to the next. Failure to do so will result in an invalid final configuration.
@@ -366,7 +380,7 @@ If any step fails and you cannot recover, your final output MUST be a JSON objec
     'agent-builder-agent': createTool(agentBuilderAgentTool),
     'tool-builder-agent': createTool(toolBuilderAgentTool),
     // Scaffolding tools - removing it for now not needed
-    //'scaffold-project': scaffoldProjectTool,
-    //'check-scaffolding-status': checkScaffoldingStatusTool,
+    'scaffold-project': scaffoldProjectTool,
+    'check-scaffolding-status': checkScaffoldingStatusTool,
   },
 });
