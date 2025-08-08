@@ -11,6 +11,7 @@ A sophisticated meta-agent system that can autonomously generate complete Mastra
 - **Automated Scaffolding**: Integrates with existing scaffolders to generate actual project files
 
 ## 🏗 Architecture
+<img width="2067" height="1230" alt="Screenshot 2025-07-01 012630" src="https://github.com/user-attachments/assets/c9ff0913-fb3a-4789-8f9c-5f8c80b595d8" />
 
 ```
 ┌─────────────────────────────────────┐
