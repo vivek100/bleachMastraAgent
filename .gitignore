@@ -6,7 +6,5 @@ dist
 .env 
 *.db 
 *.db-* 
-generated-agents
 test*.ts
 package-lock.json
-weather-agent

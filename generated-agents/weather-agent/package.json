@@ -1,0 +1,23 @@
+{
+  "name": "weather-agent",
+  "version": "0.1.0",
+  "description": "A Mastra agent that fetches current weather data for any city using an external API.",
+  "main": "src/mastra/index.ts",
+  "scripts": {
+    "dev": "mastra dev",
+    "build": "mastra build",
+    "test": "tsx src/test.ts"
+  },
+  "dependencies": {
+    "@mastra/core": "latest",
+    "@ai-sdk/openai": "latest",
+    "zod": "latest",
+    "node-fetch": "latest",
+    "tsx": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "latest",
+    "dotenv": "latest"
+  }
+}
