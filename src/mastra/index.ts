@@ -1,6 +1,5 @@
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
 
 // Import all agents
 import { orchestratorAgent } from './agents/orchestrator-agent';
