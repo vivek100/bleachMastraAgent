@@ -14,10 +14,6 @@ export const mastra = new Mastra({
     agentBuilderAgent, 
     toolBuilderAgent 
   },
-  storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
-    url: ":memory:",
-  }),
   logger: new PinoLogger({
     name: 'Mastra Meta-Agent',
     level: 'info',
